@@ -38,6 +38,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     function displayScores(data){
         console.log(data);
+        const matches=data.typeMatches[0].seriesMatches[0].seriesAdWrapper.matches;
+        if (matches && matches.length > -1){
+            
+            document.getElementById('match').textContent=`${matches[0].matchInfo.team1.teamName} vs ${matches[0].matchInfo.team2.teamName}`;
+        }
 
     }
     fetchScores();
